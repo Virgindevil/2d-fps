@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvoxm8cjqhx77"]
+
+[ext_resource type="Script" path="res://Scripts/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
+[ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
+[ext_resource type="Texture2D" uid="uid://ds6e30gs13j44" path="res://Assets/Wall.png" id="3_omttl"]
+[ext_resource type="Texture2D" uid="uid://c4g71p2wem48r" path="res://Assets/wire.png" id="4_46bq2"]
+[ext_resource type="Texture2D" uid="uid://bgfpv3l2dns2a" path="res://Assets/Frame.png" id="5_bmc0q"]
+[ext_resource type="PackedScene" uid="uid://d2qu0q4j8vsx" path="res://DEBUG/mouse_debug.tscn" id="6_ikox0"]
+
+[node name="1lvl" type="Node2D"]
+
+[node name="RedTriobiteMovepoints" type="Node2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="RedDirectionPoint" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(796, 109)
+
+[node name="RedDirectionPoint3" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(1051, 132)
+
+[node name="RedDirectionPoint2" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(787, 621)
+
+[node name="RedDirectionPoint4" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(593, 489)
+
+[node name="RedDirectionPoint5" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(1076, 387)
+
+[node name="RedDirectionPoint6" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
+position = Vector2(823, 306)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+layer = 5
+
+[node name="RedTrilobiteSpawnPoint" type="Node2D" parent="SubViewportContainer/SubViewport/CanvasLayer"]
+position = Vector2(820, 738)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_bnx8e")
+
+[node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport/CanvasLayer/RedTrilobiteSpawnPoint"]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+enabled = false
+
+[node name="sky" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sgbbn")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="wall" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 8
+texture = ExtResource("3_omttl")
+
+[node name="CanvasLayer50" type="CanvasLayer" parent="SubViewportContainer/SubViewport"]
+layer = 50
+
+[node name="wires" type="TextureRect" parent="SubViewportContainer/SubViewport/CanvasLayer50"]
+offset_left = 300.0
+offset_right = 921.0
+offset_bottom = 265.0
+scale = Vector2(0.6, 0.51)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_46bq2")
+
+[node name="helmet" type="TextureRect" parent="SubViewportContainer/SubViewport/CanvasLayer50"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_bmc0q")
+
+[node name="MouseDebug" parent="." instance=ExtResource("6_ikox0")]
+
+[connection signal="timeout" from="SubViewportContainer/SubViewport/CanvasLayer/RedTrilobiteSpawnPoint/Timer" to="SubViewportContainer/SubViewport/CanvasLayer/RedTrilobiteSpawnPoint" method="_on_timer_timeout"]
