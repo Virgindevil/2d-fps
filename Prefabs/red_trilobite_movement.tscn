@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqq0mx8fso3tj"]
+
+[ext_resource type="Script" path="res://Scripts/red_bug_movement.gd" id="1_72be4"]
+
+[node name="RedBugMovement" type="Node2D"]
+script = ExtResource("1_72be4")

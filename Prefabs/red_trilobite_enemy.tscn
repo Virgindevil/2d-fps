@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2mvwoqbaysd2"]
+
+[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/red_trilobite_movement.tscn" id="1_b7r84"]
+[ext_resource type="Script" path="res://Scripts/red_trilobite_enemy.gd" id="1_kn8d1"]
+[ext_resource type="Texture2D" uid="uid://iqitwgxxpw05" path="res://Assets/trilobite_red.png" id="2_epsdg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8pdo6"]
+
+[node name="RedTrilobiteEnemy" type="CharacterBody2D" node_paths=PackedStringArray("diraction_array")]
+script = ExtResource("1_kn8d1")
+diraction_array = NodePath("RedBugMovement")
+
+[node name="RedBugMovement" parent="." instance=ExtResource("1_b7r84")]
+group_name = "RedBugs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8pdo6")
+
+[node name="RedTrilobiteSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_epsdg")
