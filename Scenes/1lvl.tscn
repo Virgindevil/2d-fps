@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvoxm8cjqhx77"]
+[gd_scene load_steps=6 format=3 uid="uid://bvoxm8cjqhx77"]
 
 [ext_resource type="Script" path="res://Scripts/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
 [ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
 [ext_resource type="Texture2D" uid="uid://ds6e30gs13j44" path="res://Assets/Wall.png" id="3_omttl"]
 [ext_resource type="Texture2D" uid="uid://c4g71p2wem48r" path="res://Assets/wire.png" id="4_46bq2"]
 [ext_resource type="Texture2D" uid="uid://bgfpv3l2dns2a" path="res://Assets/Frame.png" id="5_bmc0q"]
-[ext_resource type="PackedScene" uid="uid://d2qu0q4j8vsx" path="res://DEBUG/mouse_debug.tscn" id="6_ikox0"]
 
 [node name="1lvl" type="Node2D"]
 
@@ -13,22 +12,22 @@
 position = Vector2(0, 2)
 
 [node name="RedDirectionPoint" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(796, 109)
+position = Vector2(695, 38)
 
 [node name="RedDirectionPoint3" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(1051, 132)
+position = Vector2(950, 61)
 
 [node name="RedDirectionPoint2" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(787, 621)
+position = Vector2(881, 521)
 
 [node name="RedDirectionPoint4" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(593, 489)
+position = Vector2(539, 493)
 
 [node name="RedDirectionPoint5" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(1076, 387)
+position = Vector2(975, 316)
 
 [node name="RedDirectionPoint6" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
-position = Vector2(823, 306)
+position = Vector2(722, 235)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 1152.0
@@ -101,7 +100,5 @@ scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_bmc0q")
-
-[node name="MouseDebug" parent="." instance=ExtResource("6_ikox0")]
 
 [connection signal="timeout" from="SubViewportContainer/SubViewport/CanvasLayer/RedTrilobiteSpawnPoint/Timer" to="SubViewportContainer/SubViewport/CanvasLayer/RedTrilobiteSpawnPoint" method="_on_timer_timeout"]
