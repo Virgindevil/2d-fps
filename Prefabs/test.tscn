@@ -7,20 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/red_trilobite_movement.tscn" id="4_1eukw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07uym"]
-radius = 90.0
-height = 330.0
+radius = 83.0
+height = 312.0
 
 [node name="RedTrilobite_enemy" type="CharacterBody2D" node_paths=PackedStringArray("diraction_array", "attack_prefab")]
 light_mask = 2
+collision_priority = 2.0
 input_pickable = true
 script = ExtResource("2_xmkvm")
-diraction_array = NodePath("RedBugMovement")
-attack_prefab = NodePath("red_trilobite_attack")
-
-[node name="RedBugMovement" parent="." instance=ExtResource("4_1eukw")]
-group_name = "RedBugs"
-
-[node name="red_trilobite_attack" parent="." instance=ExtResource("3_qc1a6")]
+diraction_array = NodePath("Area2D/RedBugMovement")
+attack_prefab = NodePath("Area2D/red_trilobite_attack")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -31,5 +27,11 @@ texture = ExtResource("1_dtptq")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(126, 187)
+position = Vector2(128, 189)
 shape = SubResource("CapsuleShape2D_07uym")
+
+[node name="red_trilobite_attack" parent="Area2D" node_paths=PackedStringArray("enemy_sprite") instance=ExtResource("3_qc1a6")]
+enemy_sprite = NodePath("../Sprite2D")
+
+[node name="RedBugMovement" parent="Area2D" instance=ExtResource("4_1eukw")]
+group_name = "RedBugs"

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmimme5okrmoy"]
+
+[ext_resource type="Texture2D" uid="uid://bd1d53ghdupms" path="res://Assets/plank.png" id="1_y3lvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ebcc"]
+size = Vector2(1223, 155)
+
+[node name="Node2D" type="Node2D"]
+top_level = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+offset_right = 1260.0
+offset_bottom = 160.0
+texture = ExtResource("1_y3lvi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(634.5, 80.5)
+shape = SubResource("RectangleShape2D_3ebcc")
