@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var group_name : String
+@export var button : Button
 
 var positions : Array
 var temp_positions : Array
@@ -16,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	#Когда объект достигает указанной точки, она меняется на следующую в массиве
-	if global_position.distance_to(current_position.position) < 10:
+	if button.global_position.distance_to(current_position.position) < 10:
 		get_next_posotion()
 
 func get_positions(): 

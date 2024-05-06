@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1pnsod4t5o3n"]
+
+[ext_resource type="Texture2D" uid="uid://iqitwgxxpw05" path="res://Assets/trilobite_red.png" id="1_6ygpk"]
+[ext_resource type="Script" path="res://Button.gd" id="2_m7dco"]
+[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/red_trilobite_movement.tscn" id="3_7sskk"]
+[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/red_trilobite_attack.tscn" id="4_no7a8"]
+
+[node name="Button" type="Button" node_paths=PackedStringArray("diraction_array")]
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+icon = ExtResource("1_6ygpk")
+flat = true
+script = ExtResource("2_m7dco")
+diraction_array = NodePath("RedBugMovement")
+
+[node name="RedBugMovement" parent="." node_paths=PackedStringArray("button") instance=ExtResource("3_7sskk")]
+group_name = "RedBugs"
+button = NodePath("..")
+
+[node name="Node2D" parent="." node_paths=PackedStringArray("enemy_sprite") instance=ExtResource("4_no7a8")]
+enemy_sprite = NodePath("..")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
