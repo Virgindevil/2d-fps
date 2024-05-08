@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvoxm8cjqhx77"]
+[gd_scene load_steps=8 format=3 uid="uid://bvoxm8cjqhx77"]
 
 [ext_resource type="Script" path="res://Scripts/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
 [ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c4g71p2wem48r" path="res://Assets/wire.png" id="4_46bq2"]
 [ext_resource type="Texture2D" uid="uid://bgfpv3l2dns2a" path="res://Assets/Frame.png" id="5_bmc0q"]
 [ext_resource type="PackedScene" uid="uid://cmimme5okrmoy" path="res://Prefabs/construction_beam.tscn" id="6_sdl78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfq7a"]
+size = Vector2(1076.67, 126.667)
 
 [node name="1lvl" type="Node2D"]
 
@@ -29,6 +32,14 @@ position = Vector2(975, 316)
 
 [node name="RedDirectionPoint6" type="Marker2D" parent="RedTriobiteMovepoints" groups=["RedBugs"]]
 position = Vector2(722, 235)
+
+[node name="BombTriobiteMovepoints" type="Node2D" parent="."]
+
+[node name="BombDirectionPoint" type="Marker2D" parent="BombTriobiteMovepoints" groups=["BombBugs"]]
+position = Vector2(1462, 80)
+
+[node name="BombDirectionPoint2" type="Marker2D" parent="BombTriobiteMovepoints" groups=["BombBugs"]]
+position = Vector2(800, 80)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 1152.0
@@ -86,18 +97,13 @@ texture = ExtResource("4_46bq2")
 
 [node name="helmet" type="TextureRect" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/wires"]
 top_level = true
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_bmc0q")
-
-[node name="Plank" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/wires/helmet" instance=ExtResource("6_sdl78")]
-show_behind_parent = true
-top_level = false
-position = Vector2(900, 200)
-scale = Vector2(0.85, 0.85)
 
 [node name="RedTrilobiteSpawnPoint" type="Node2D" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D"]
 show_behind_parent = true
@@ -106,6 +112,16 @@ script = ExtResource("1_bnx8e")
 
 [node name="Timer" type="Timer" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/RedTrilobiteSpawnPoint"]
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D"]
+position = Vector2(496.667, -170)
+shape = SubResource("RectangleShape2D_pfq7a")
+
+[node name="Plank" parent="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/CollisionShape2D" instance=ExtResource("6_sdl78")]
+show_behind_parent = true
+top_level = false
+position = Vector2(-556.667, -69.9999)
+scale = Vector2(0.85, 0.85)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="SubViewportContainer/SubViewport2"]
 layer = 3

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://red_bug_attack.gd" id="1_diyb4"]
 
-[node name="Node2D" type="Node2D"]
+[node name="AttackNode2D" type="Node2D"]
 script = ExtResource("1_diyb4")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7orbf50x730n"]
+
+[ext_resource type="Texture2D" uid="uid://dl5jkekjyf64e" path="res://Assets/trilobite_tank.png" id="1_5gcv6"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+action_mode = 0
+icon = ExtResource("1_5gcv6")
+flat = true
