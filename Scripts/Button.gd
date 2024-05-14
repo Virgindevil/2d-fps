@@ -1,9 +1,7 @@
 extends Button
 @export var diraction_array : Node2D
 @export var attack_prefab : Node2D
-
-
-
+@export var enemy_health : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +17,11 @@ func _physics_process(delta):
 	#		pass
 
 func _on_button_down():
-	queue_free()
+	enemy_health -= 1
+	if enemy_health == 0:
+		var par = get_parent()
+		par.clear_arr_element()
+		queue_free()
+	
 
 

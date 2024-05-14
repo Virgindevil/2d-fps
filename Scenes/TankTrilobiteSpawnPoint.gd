@@ -1,13 +1,12 @@
 extends Node2D
 
-
-var numbers_of_enemies = 25
+var numbers_of_enemies = 5
 var arr : Array
 
 func _on_timer_timeout():
-	if numbers_of_enemies > 0 and arr.size() <= 4:
+	if numbers_of_enemies > 0 and arr.size() < 1:
 		numbers_of_enemies -= 1
-		var enemy = load("res://Prefabs/enemies/redBug.tscn").instantiate()
+		var enemy = load("res://Prefabs/enemies/tank.tscn").instantiate()
 		add_child(enemy)
 		arr.append(enemy)
 
