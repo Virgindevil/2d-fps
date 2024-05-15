@@ -4,10 +4,11 @@
 
 [node name="AttackNode2D" type="Node2D"]
 script = ExtResource("1_diyb4")
+time_to_shoot = 5
+red_attack = "C:/PROGRAMMS/PROJECTS/2d-fps/Assets/Flame.png"
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 7.0
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

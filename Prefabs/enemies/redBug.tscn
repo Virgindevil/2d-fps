@@ -22,5 +22,6 @@ button = NodePath("..")
 
 [node name="AttackNode" parent="." node_paths=PackedStringArray("enemy_sprite") instance=ExtResource("4_diwjs")]
 enemy_sprite = NodePath("..")
+time_to_shoot = 4
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

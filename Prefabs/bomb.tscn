@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk7ha6cy7tfkr"]
+
+[ext_resource type="Texture2D" uid="uid://bly5axxjt5wta" path="res://Assets/bomb.png" id="1_drc18"]
+
+[node name="Bomb" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_drc18")
+centered = false
