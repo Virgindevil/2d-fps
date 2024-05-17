@@ -11,7 +11,6 @@ var original_color : Color
 
 # Called when the node enters the scene tree for the first time.
 func _ready():	
-	print(red_attack)		
 	original_color = enemy_sprite.modulate
 	is_attack = false
 	%Timer.start(time_to_shoot)

@@ -132,8 +132,7 @@ scale = Vector2(0.85, 0.85)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="SubViewportContainer/SubViewport2"]
 
-[node name="UIAmmoCount" parent="SubViewportContainer/SubViewport2/CanvasLayer2" node_paths=PackedStringArray("Camera") instance=ExtResource("8_l83yg")]
-Camera = NodePath("../../CanvasLayer/Camera2D")
+[node name="UIAmmoCount" parent="SubViewportContainer/SubViewport2/CanvasLayer2" instance=ExtResource("8_l83yg")]
 
 [connection signal="timeout" from="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/RedTrilobiteSpawnPoint/Timer" to="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/RedTrilobiteSpawnPoint" method="_on_timer_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/TankTrilobiteSpawnPoint2/Timer" to="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/TankTrilobiteSpawnPoint2" method="_on_timer_timeout"]
