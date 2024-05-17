@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cftl4p5hnbgac"]
+[gd_scene load_steps=7 format=3 uid="uid://wr6icgebmls7"]
 
 [ext_resource type="Texture2D" uid="uid://iqitwgxxpw05" path="res://Assets/trilobite_red.png" id="1_dtptq"]
 [ext_resource type="Script" path="res://Scripts/red_trilobite_enemy.gd" id="2_xmkvm"]
 [ext_resource type="Script" path="res://Scripts/red_bug_collision.gd" id="3_etty4"]
-[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/red_trilobite_attack.tscn" id="3_qc1a6"]
-[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/red_trilobite_movement.tscn" id="4_1eukw"]
+[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="3_qc1a6"]
+[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="4_1eukw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07uym"]
 radius = 83.0

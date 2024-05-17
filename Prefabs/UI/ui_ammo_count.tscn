@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://crmft5sjb1ets"]
+
+[ext_resource type="Script" path="res://Prefabs/UI/ReloadBlock.gd" id="1_8djnf"]
+[ext_resource type="Script" path="res://Prefabs/UI/UIAmmoText.gd" id="1_n7v03"]
+[ext_resource type="Texture2D" uid="uid://bja8y2aodagr1" path="res://Assets/bullet.png" id="1_th4mg"]
+
+[node name="UIAmmoCount" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReloadBlock" type="Panel" parent="." node_paths=PackedStringArray("AmmoText")]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8djnf")
+AmmoText = NodePath("../AmmoText")
+
+[node name="Timer" type="Timer" parent="ReloadBlock"]
+unique_name_in_owner = true
+wait_time = 1.5
+one_shot = true
+
+[node name="AmmoText" type="TextEdit" parent="." node_paths=PackedStringArray("ReloadBlock")]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = -134.0
+offset_right = 224.0
+offset_bottom = -82.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "10"
+script = ExtResource("1_n7v03")
+ReloadBlock = NodePath("../ReloadBlock")
+number_of_ammo = 10
+
+[node name="TextureRect" type="TextureRect" parent="AmmoText"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 8.0
+offset_right = 82.0
+offset_bottom = 43.0
+texture = ExtResource("1_th4mg")
+expand_mode = 1
+
+[connection signal="timeout" from="ReloadBlock/Timer" to="ReloadBlock" method="_on_timer_timeout"]

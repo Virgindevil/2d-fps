@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://7e1wglcax3nu"]
 
-[ext_resource type="Texture2D" uid="uid://nbhbx47gylry" path="res://Assets/Flame.png" id="1_cqnnx"]
+[ext_resource type="Texture2D" uid="uid://nbhbx47gylry" path="res://Assets/Flame.png" id="1_mf1xm"]
 
 [node name="Flame" type="Sprite2D"]
 light_mask = 32
 z_index = 1
-texture = ExtResource("1_cqnnx")
+texture = ExtResource("1_mf1xm")
 centered = false

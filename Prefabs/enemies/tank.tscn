@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dl5jkekjyf64e" path="res://Assets/trilobite_tank.png" id="1_5gcv6"]
 [ext_resource type="Script" path="res://Scripts/Button.gd" id="2_rxknt"]
-[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/red_trilobite_movement.tscn" id="3_qxh7i"]
-[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/red_trilobite_attack.tscn" id="4_oolo4"]
+[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="3_qxh7i"]
+[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="4_oolo4"]
 
 [node name="Button" type="Button" node_paths=PackedStringArray("diraction_array", "attack_prefab")]
 offset_right = 8.0

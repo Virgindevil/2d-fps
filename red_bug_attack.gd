@@ -27,9 +27,9 @@ func _process(delta):
 func _on_timer_timeout():
 	var flame 
 	if is_tank:
-		flame = load("res://Prefabs/bomb.tscn").instantiate()
+		flame = load("res://Prefabs/Particles/bomb.tscn").instantiate()
 	else:
-		flame = load("res://Prefabs/flame.tscn").instantiate()
+		flame = load("res://Prefabs/Particles/flame.tscn").instantiate()
 	flame.position = position
 	enemy_sprite.modulate = original_color
 	add_child(flame)
