@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk7ha6cy7tfkr"]
+[gd_scene load_steps=3 format=3 uid="uid://bk7ha6cy7tfkr"]
 
 [ext_resource type="Texture2D" uid="uid://bly5axxjt5wta" path="res://Assets/bomb.png" id="1_4tth5"]
+[ext_resource type="Script" path="res://Prefabs/Particles/bomb.gd" id="2_f6soa"]
 
-[node name="Bomb" type="Sprite2D"]
+[node name="Bomb" type="Button"]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_4tth5")
-centered = false
+icon = ExtResource("1_4tth5")
+flat = true
+script = ExtResource("2_f6soa")
+group_name = "Enemies"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
