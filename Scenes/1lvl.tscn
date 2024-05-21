@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvoxm8cjqhx77"]
+[gd_scene load_steps=12 format=3 uid="uid://bvoxm8cjqhx77"]
 
 [ext_resource type="Script" path="res://Scripts/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
 [ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
@@ -11,6 +11,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfq7a"]
 size = Vector2(1076.67, 130)
+
+[sub_resource type="Gradient" id="Gradient_3osog"]
+colors = PackedColorArray(0, 0, 0, 0.784314, 0.219608, 0.537255, 0.34902, 0.686275)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3a5o5"]
+gradient = SubResource("Gradient_3osog")
+width = 258
+height = 55
+fill_from = Vector2(-0.25, 0)
 
 [node name="1lvl" type="Node2D"]
 
@@ -133,6 +142,19 @@ scale = Vector2(0.85, 0.85)
 [node name="CanvasLayer2" type="CanvasLayer" parent="SubViewportContainer/SubViewport2"]
 
 [node name="UIAmmoCount" parent="SubViewportContainer/SubViewport2/CanvasLayer2" instance=ExtResource("8_l83yg")]
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport2"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_3a5o5")
 
 [connection signal="timeout" from="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/RedTrilobiteSpawnPoint/Timer" to="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/RedTrilobiteSpawnPoint" method="_on_timer_timeout"]
 [connection signal="timeout" from="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/TankTrilobiteSpawnPoint2/Timer" to="SubViewportContainer/SubViewport2/CanvasLayer/Camera2D/TankTrilobiteSpawnPoint2" method="_on_timer_timeout"]
