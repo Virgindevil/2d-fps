@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ogesdnp843u5"]
+
+[ext_resource type="Texture2D" uid="uid://psgunhwtalxv" path="res://Assets/drone.png" id="1_p61it"]
+[ext_resource type="Script" path="res://Scripts/enemies/EnemyCore.gd" id="2_36mdf"]
+[ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="2_gw1dp"]
+[ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="3_x4ru3"]
+
+[node name="Scoutt" type="Button" node_paths=PackedStringArray("diraction_array", "attack_prefab") groups=["Enemies"]]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -929.0
+offset_bottom = -447.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+icon = ExtResource("1_p61it")
+flat = true
+vertical_icon_alignment = 0
+script = ExtResource("2_36mdf")
+diraction_array = NodePath("RedBugMovement")
+attack_prefab = NodePath("AttackNode2D")
+enemy_health = 2
+enemy_speed = 5.0
+
+[node name="RedBugMovement" parent="." node_paths=PackedStringArray("button") instance=ExtResource("2_gw1dp")]
+group_name = "ScauttBugs"
+button = NodePath("..")
+
+[node name="AttackNode2D" parent="." node_paths=PackedStringArray("enemy_sprite") instance=ExtResource("3_x4ru3")]
+enemy_sprite = NodePath("..")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
