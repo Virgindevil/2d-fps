@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2iy1auuh6pas"]
 
-[ext_resource type="Script" path="res://red_bug_attack.gd" id="1_diyb4"]
+[ext_resource type="Script" path="res://Scripts/enemies/red_bug_attack.gd" id="1_diyb4"]
 
 [node name="AttackNode2D" type="Node2D"]
 script = ExtResource("1_diyb4")
 time_to_shoot = 5
-red_attack = "C:/PROGRAMMS/PROJECTS/2d-fps/Assets/Flame.png"
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

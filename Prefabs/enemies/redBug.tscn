@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1pnsod4t5o3n"]
 
 [ext_resource type="Texture2D" uid="uid://iqitwgxxpw05" path="res://Assets/trilobite_red.png" id="1_wys8w"]
-[ext_resource type="Script" path="res://Scripts/Button.gd" id="2_6nk5r"]
+[ext_resource type="Script" path="res://Scripts/enemies/EnemyCore.gd" id="2_6nk5r"]
 [ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="3_32ksb"]
 [ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="4_diwjs"]
 

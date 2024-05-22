@@ -7,7 +7,7 @@ var enemies
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bomb_hp = 5
+	bomb_hp = 3
 	pass # Replace with function body.
 
 
@@ -15,9 +15,11 @@ func _ready():
 func _process(delta):
 	if bomb_hp <= 0:
 		enemies = get_tree().get_nodes_in_group(group_name)
-		for i in enemies:
-			enemies[i].queue_free()		
+		for i in enemies.size():
+			var temp = enemies[i]
+			temp.enemy_health = 0		
 		queue_free()
+		enemies.clear()
 
 
 func _on_button_down():

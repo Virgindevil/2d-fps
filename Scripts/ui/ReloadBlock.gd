@@ -6,7 +6,6 @@ extends Panel
 func _process(delta):
 	if is_visible_in_tree() == true and %Timer.is_stopped() == true:
 		GlobalVars.is_reloading = true
-		print("TimerSTART")
 		%Timer.start(1.5)
 
 

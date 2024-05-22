@@ -3,7 +3,6 @@ extends Node2D
 @export var enemy_sprite : CanvasItem
 @export var time_to_shoot : int
 @export var is_tank : bool
-@export_global_file ("res://Assets/Flame.png") var red_attack
 
 var is_attack : bool
 var is_charge : bool

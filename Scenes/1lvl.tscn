@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bvoxm8cjqhx77"]
 
-[ext_resource type="Script" path="res://Scripts/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
+[ext_resource type="Script" path="res://Scripts/enemies/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
 [ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
 [ext_resource type="Texture2D" uid="uid://ds6e30gs13j44" path="res://Assets/Wall.png" id="3_omttl"]
 [ext_resource type="Texture2D" uid="uid://c4g71p2wem48r" path="res://Assets/wire.png" id="4_46bq2"]

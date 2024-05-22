@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk7ha6cy7tfkr"]
 
 [ext_resource type="Texture2D" uid="uid://bly5axxjt5wta" path="res://Assets/bomb.png" id="1_4tth5"]
-[ext_resource type="Script" path="res://Prefabs/Particles/bomb.gd" id="2_f6soa"]
+[ext_resource type="Script" path="res://Scripts/enemies/particles/bomb.gd" id="2_f6soa"]
 
 [node name="Bomb" type="Button"]
 scale = Vector2(0.1, 0.1)

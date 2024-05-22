@@ -20,7 +20,6 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			if ammo_left > 1:
-				print(ammo_left)
 				ammo_left -= 1
 				text= str(ammo_left)
 			else:

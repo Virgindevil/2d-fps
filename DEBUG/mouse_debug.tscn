@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2qu0q4j8vsx"]
-
-[ext_resource type="Script" path="res://DEBUG/Node2D.gd" id="1_3l22h"]
-
-[node name="MouseDebug" type="Node2D"]
-visible = false
-script = ExtResource("1_3l22h")

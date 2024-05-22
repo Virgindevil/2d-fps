@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7orbf50x730n"]
 
 [ext_resource type="Texture2D" uid="uid://dl5jkekjyf64e" path="res://Assets/trilobite_tank.png" id="1_5gcv6"]
-[ext_resource type="Script" path="res://Scripts/Button.gd" id="2_rxknt"]
+[ext_resource type="Script" path="res://Scripts/enemies/EnemyCore.gd" id="2_rxknt"]
 [ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="3_qxh7i"]
 [ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="4_oolo4"]
 
@@ -22,7 +22,7 @@ button = NodePath("..")
 
 [node name="AttackNode2D" parent="." node_paths=PackedStringArray("enemy_sprite") instance=ExtResource("4_oolo4")]
 enemy_sprite = NodePath("..")
-time_to_shoot = 13
+time_to_shoot = 8
 is_tank = true
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
