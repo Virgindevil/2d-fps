@@ -15,7 +15,7 @@ script = ExtResource("2_6nk5r")
 diraction_array = NodePath("RedBugMovement")
 attack_prefab = NodePath("AttackNode")
 enemy_health = 1
-enemy_speed = 4.0
+enemy_speed = 3.4
 
 [node name="RedBugMovement" parent="." node_paths=PackedStringArray("button") instance=ExtResource("3_32ksb")]
 group_name = "RedBugs"

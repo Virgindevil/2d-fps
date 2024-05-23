@@ -8,6 +8,8 @@ extends Button
 func _physics_process(delta):
 	if attack_prefab.is_attack != true:
 		global_position = global_position.move_toward(diraction_array.current_position.position, enemy_speed)
+	if attack_prefab.is_tank == true || attack_prefab.is_scout == true:
+		global_position = global_position.move_toward(diraction_array.current_position.position, enemy_speed)
 	if enemy_health == 0:
 			var par = get_parent()
 			par.clear_arr_element()
@@ -19,7 +21,3 @@ func _physics_process(delta):
 func _on_button_down():
 	if GlobalVars.is_reloading == false:
 		enemy_health -= 1
-		
-	
-
-
