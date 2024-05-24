@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvoxm8cjqhx77"]
+[gd_scene load_steps=15 format=3 uid="uid://bvoxm8cjqhx77"]
 
 [ext_resource type="Script" path="res://Scripts/enemies/RedTrilobiteSpawnPoint.gd" id="1_bnx8e"]
 [ext_resource type="Texture2D" uid="uid://busrhhnu4ammq" path="res://Assets/Sky.png" id="2_sgbbn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cmimme5okrmoy" path="res://Prefabs/construction_beam.tscn" id="6_sdl78"]
 [ext_resource type="Script" path="res://Scenes/ScauttTriobiteSpawnPoint.gd" id="7_ip6mt"]
 [ext_resource type="PackedScene" uid="uid://crmft5sjb1ets" path="res://Prefabs/UI/ui_ammo_count.tscn" id="8_l83yg"]
+[ext_resource type="PackedScene" uid="uid://cfnklygiavux3" path="res://Prefabs/enimies_parts/bonuses_spawn.tscn" id="8_tqwkw"]
 [ext_resource type="Script" path="res://Scenes/HealthBar.gd" id="9_abvno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfq7a"]
@@ -133,6 +134,8 @@ scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_bmc0q")
+
+[node name="BonusesSpawn" parent="Screen/Viewport/CanvasLayer/Camera2D" groups=["Spawn_Bonus"] instance=ExtResource("8_tqwkw")]
 
 [node name="RedTrilobiteSpawnPoint" type="Node2D" parent="Screen/Viewport/CanvasLayer/Camera2D"]
 show_behind_parent = true

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqq0mx8fso3tj" path="res://Prefabs/enimies_parts/red_trilobite_movement.tscn" id="2_gw1dp"]
 [ext_resource type="PackedScene" uid="uid://c2iy1auuh6pas" path="res://Prefabs/enimies_parts/red_trilobite_attack.tscn" id="3_x4ru3"]
 
-[node name="Scoutt" type="Button" node_paths=PackedStringArray("diraction_array", "attack_prefab") groups=["Enemies"]]
+[node name="Scoutt" type="Button" node_paths=PackedStringArray("diraction_array", "attack_prefab", "bonus_spawn") groups=["Enemies"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,6 +20,7 @@ vertical_icon_alignment = 0
 script = ExtResource("2_36mdf")
 diraction_array = NodePath("RedBugMovement")
 attack_prefab = NodePath("AttackNode2D")
+bonus_spawn = NodePath("")
 enemy_health = 2
 enemy_speed = 4.5
 

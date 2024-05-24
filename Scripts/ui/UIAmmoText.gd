@@ -14,7 +14,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if GlobalVars.is_automata_pickup:
+		text= str(GlobalVars.ammo)
+		ammo_left = GlobalVars.ammo
+		GlobalVars.is_automata_active = true
+		GlobalVars.is_automata_pickup = false
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -26,6 +30,5 @@ func _input(event):
 				text= str(0)
 				ReloadBlock.visible = true
 				
-	#if event is Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		
 		

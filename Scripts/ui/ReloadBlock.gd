@@ -8,9 +8,14 @@ func _process(delta):
 		GlobalVars.is_reloading = true
 		%Timer.start(1.5)
 
-
 func _on_timer_timeout():
-	AmmoText.ammo_left = 10
+	if GlobalVars.is_automata_active:
+		reload(30)
+	else:	
+		reload(10)
+
+func reload(ammo_count):
+	AmmoText.ammo_left = ammo_count
 	AmmoText.text = str(AmmoText.ammo_left)
 	visible = false
 	GlobalVars.is_reloading = false

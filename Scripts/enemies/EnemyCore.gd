@@ -1,6 +1,7 @@
 extends Button
 @export var diraction_array : Node2D
 @export var attack_prefab : Node2D
+@export var bonus_spawn : Node2D
 @export var enemy_health : int
 @export var enemy_speed: float
 
@@ -11,9 +12,10 @@ func _physics_process(delta):
 	if attack_prefab.is_tank == true || attack_prefab.is_scout == true:
 		global_position = global_position.move_toward(diraction_array.current_position.position, enemy_speed)
 	if enemy_health == 0:
-			var par = get_parent()
-			par.clear_arr_element()
-			queue_free()
+		get_tree().get_first_node_in_group("Spawn_Bonus").spawn_bonus(position)
+		var par = get_parent()
+		par.clear_arr_element()
+		queue_free()
 	#if attack_prefab != null:			
 	#	if not attack_prefab.is_attack:	
 	#		pass

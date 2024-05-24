@@ -5,6 +5,7 @@
 
 [node name="Bomb" type="Button"]
 scale = Vector2(0.1, 0.1)
+action_mode = 0
 icon = ExtResource("1_4tth5")
 flat = true
 script = ExtResource("2_f6soa")
